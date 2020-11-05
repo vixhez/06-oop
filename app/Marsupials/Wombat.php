@@ -7,28 +7,28 @@ class Wombat
     private $wombatName;
     private $hugs = 0;
 
-    public function __construct($wombatName)
+    public function __construct(string $wombatName)
     {
         $this->wombatName = $wombatName;
     }
 
-    public function getName()
+    public function getName() : string
     {
         return $this->wombatName;
     }
 
-    public function sayHelloTo($wombatFriend)
+    public function sayHelloTo($wombatFriend) : string
     {
         return "Hello {$wombatFriend->getName()}";
     }
     
-    public function giveHug()
+    public function giveHug() : Wombat
     {
         $this->hugs += 1;
         return $this;
     }
 
-    public function howManyHugs()
+    public function howManyHugs() : int
     {
         return $this->hugs;
     }

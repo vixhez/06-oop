@@ -7,18 +7,18 @@ class Person
     private $firstName;
     private $lastName;
 
-    public function __construct($first, $last)
+    public function __construct(string $first, string $last)
     {
         $this->firstName = $first;
         $this->lastName = $last;
     }
     
-    public function fullName()
+    public function fullName() : string
     {
         return "{$this->firstName} {$this->lastName}";
     }
 
-    public function sayHelloTo($person)
+    public function sayHelloTo(Person $person) : string
     {
         return "Hello {$person->fullName()}";
     }
